@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Successful</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f7f9ff;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        h2 {
+            color: green;
+            margin-bottom: 20px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #283f57;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        a.button:hover {
+            background-color: #1d2f45;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>✅ PYQ uploaded successfully!</h2>
+        <a class="button" href="uploadpyq.html">📄 Upload Another</a>
+        <h2>Click to view the uploaded File</h2>
+        <a class="button" href="uploads/notes/<?php echo htmlspecialchars($file); ?>" target="_blank">🔍 View Uploaded File</a>
+    </div>
+</body>
+</html>

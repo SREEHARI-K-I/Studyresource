@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Event</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .event-form-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .event-form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #1a237e;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #1a237e;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3949ab;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="event-form-container">
+    <h2>Submit Event Request</h2>
+    <form action="pendingevent.php" method="POST" enctype="multipart/form-data">
+      <label for="title">Event Title:</label>
+      <input type="text" name="title" id="title" required>
+
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" rows="4" required></textarea>
+
+      <label for="event_date">Date of Event:</label>
+      <input type="date" name="event_date" id="event_date" required>
+
+      <label for="poster">Upload Poster/Image:</label>
+      <input type="file" name="poster" id="poster" accept=".jpg,.jpeg,.png,.gif,.pdf" required>
+
+      <button type="submit">Submit Event</button>
+    </form>
+  </div>
+
+</body>
+</html>

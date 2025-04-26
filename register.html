@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px; /* Add some space below the register button */
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .login-option {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-button {
+            background: #28a745; /* Green color for login button */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .login-button:hover {
+            background: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="Register.php" method="post">
+            <div class="input-group">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password:</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label>University Register Number:</label>
+                <input type="text" name="register_number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Role:</label>
+                <select name="role" id="role" onchange="toggleAdminFields()" required>
+                    <option value="student">Student</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <div id="adminFields" class="input-group hidden">
+                <label>Admin ID:</label>
+                <input type="text" name="admin_id">
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="login-option">
+            <p>Do you have an account? <a href="login.html" class="login-button">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAdminFields() {
+            let role = document.getElementById("role").value;
+            let adminFields = document.getElementById("adminFields");
+            adminFields.classList.toggle("hidden", role !== "admin");
+        }
+    </script>
+</body>
+</html>
